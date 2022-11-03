@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 class BaseCrawler {
@@ -5,7 +6,9 @@ class BaseCrawler {
 
   String enqueueStrategy = 'same-site';
 
-  List<String> entries;
+  Set<String> entries;
+
+  Dio dio = Dio();
 
   BaseCrawler(this.entries) {
     if (entries.isEmpty) {
@@ -17,7 +20,7 @@ class BaseCrawler {
 
   tryResume() {}
 
-  run() {
+  run() async {
     // enqueue link
     // route
     // handle

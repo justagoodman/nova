@@ -28,4 +28,9 @@ class Comic {
     updateTime = data['updateTime'];
     statusText = data['statusText'];
   }
+
+  @override
+  String toString() {
+    return 'title: $title\r\n author: $author';
+  }
 }
